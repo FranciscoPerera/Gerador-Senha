@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Senhas</title>
+  <link rel="icon" href="img/logo.png">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fonte personalizada -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Ícones do Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- CONTAINER PRINCIPAL -->
+  <div class="app-container">
+
+    <!-- CABEÇALHO -->
+    <div class="header">
+      <h1>Gerador de Senhas Seguras</h1>
+      <p>Crie senhas fortes para proteger suas contas</p>
+    </div>
+
+    <div class="content">
+
+      <!-- CAMPO DA SENHA GERADA -->
+      <div class="password-box">
+        <input type="text" id="password" disabled />
+
+        <!-- Botão de copiar senha -->
+        <button class="copy-btn" onclick="copyPassword()">
+          <span class="material-symbols-rounded">content_copy</span>
+        </button>
+      </div>
+
+      <!-- BARRA DE FORÇA DA SENHA -->
+      <div class="strength">
+        <div id="strengthFill" class="strength-fill bg-danger"></div>
+      </div>
+
+      <!-- CHECKBOX DE CONFIGURAÇÕES -->
+      <div class="mb-3">
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="lowercase" checked>
+          <label>Letras minúsculas</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="uppercase" checked>
+          <label>Letras maiúsculas</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="numbers" checked>
+          <label>Números</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="symbols">
+          <label>Símbolos</label>
+        </div>
+
+      </div>
+
+      <!-- BOTÕES -->
+      <button class="btn-generate" onclick="generatePassword()">
+        Gerar Senha
+      </button>
+
+      <button class="btn-reset" onclick="resetAll()">
+        Redefinir
+      </button>
+
+    </div>
+  </div>
+
+  <!-- TOAST DE FEEDBACK -->
+  <div id="toast" class="toast-msg">Senha copiada ✔</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
